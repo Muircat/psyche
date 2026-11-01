@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "psyche",
+  "version": "${version}",
+  "name": "Psyche",
+  "description": "Revise C98HD Developmental Psychology while you play: short typed recall questions from the lectures, tied to what just happened in your world.",
+  "authors": ["Frek"],
+  "license": "MIT",
+  "icon": "assets/psyche/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["dev.psyche.Psyche"],
+    "client": ["dev.psyche.client.PsycheClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
