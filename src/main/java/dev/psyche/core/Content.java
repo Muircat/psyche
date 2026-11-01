@@ -94,14 +94,10 @@ public final class Content {
             return out;
         }
 
-        /** Word tiles for the word bank: each idea's main phrasing plus distractors, shuffled. */
-        public List<String> tiles(Random rnd) {
+        /** The key phrasings this challenge needs, one per idea. */
+        public List<String> keys() {
             List<String> out = new ArrayList<>();
             for (Idea i : ideas) out.add(i.any().get(0));
-            int real = out.size();
-            out.addAll(extra);
-            List<String> first = new ArrayList<>(out);
-            for (int n = 0; n < 8 && out.size() > 1 && out.subList(0, real).equals(first.subList(0, real)); n++) Collections.shuffle(out, rnd);
             return out;
         }
     }
@@ -110,6 +106,31 @@ public final class Content {
     public final Map<String, Term> terms = new LinkedHashMap<>();
     public final List<Challenge> challenges = new ArrayList<>();
     private Set<String> known;
+
+    /**
+     * Tiles for the word bank hint: each idea's main phrasing hidden among at least as many distractors, and at least
+     * four (the challenge's own extras, then answers to other questions in the topic, then glossary terms), shuffled.
+     */
+    public List<String> bank(Challenge c, Random rnd) {
+        List<String> keys = c.keys();
+        Set<String> seen = new HashSet<>();
+        for (String k : keys) seen.add(k.toLowerCase(Locale.ROOT));
+        List<String> decoys = new ArrayList<>();
+        for (String e : c.extra) if (seen.add(e.toLowerCase(Locale.ROOT))) decoys.add(e);
+        List<String> pool = new ArrayList<>(), terms = new ArrayList<>();
+        for (Challenge o : challenges)
+            if (o != c && c.topic.equals(o.topic)) for (String k : o.keys()) if (k.length() <= 30) pool.add(k);
+        for (Term t : this.terms.values()) terms.add(t.name());
+        Collections.shuffle(pool, rnd);
+        Collections.shuffle(terms, rnd);
+        pool.addAll(terms);
+        int want = Math.max(4, keys.size());
+        for (String k : pool) { if (decoys.size() >= want) break; if (seen.add(k.toLowerCase(Locale.ROOT))) decoys.add(k); }
+        List<String> out = new ArrayList<>(keys);
+        out.addAll(decoys);
+        Collections.shuffle(out, rnd);
+        return out;
+    }
 
     /** Loads a pack. Later packs may add topics and terms, or replace challenges by id. */
     public void load(Reader r) {

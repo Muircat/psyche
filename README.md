@@ -33,12 +33,13 @@ Plus a 153-term glossary that the marker uses to explain mix-ups.
 
 ## How it teaches
 - **Recall, not recognition.** You always **type** the answer. No multiple choice.
-- **Guided → independent.** Every question climbs its own ladder: *Word bank* (type it with the key terms in view),
+- **Guided → independent.** Every question climbs its own ladder: *Guided* (with the clue given for free),
   *Complete* (fill the gap in a sentence), *Recall* (answer from the question alone), then *Apply* (diagnose a fresh
   scenario: "When her mum comes back, Ava keeps playing and turns away. Which attachment type?"). A clean answer moves
   it up a rung, a miss moves it down. *Easier* steps down for this try.
 - **Hints in small steps.** A clue, then the first letters (or how many key ideas you need and one of them), then the
-  word bank. Each hint costs a quarter of the XP. After a wrong try the clue comes free.
+  word bank, where the terms you need are mixed in with other terms from the topic. Nothing that gives the answer
+  away is shown until you ask for it. Each hint costs a quarter of the XP. After a wrong try the clue comes free.
 - **Marks meaning, not exact wording.** Answers are marked offline on their *key ideas*: "the gap between what a
   child can do alone and with help" and "what a kid can manage on their own vs with an adult helping" both get the ZPD.
   Word endings (assimilate / assimilating), British and American spelling (behaviour, disorganized) and small typos

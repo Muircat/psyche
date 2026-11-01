@@ -5104,7 +5104,7 @@
    "id": "pia_concrete",
    "topic": "piaget",
    "level": 1,
-   "ask": "In which stage does reasoning become logical about concrete things, with conservation and class hierarchies?",
+   "ask": "In which stage does reasoning become logical about real, tangible things, with conservation and class hierarchies?",
    "need": [
     [
      "concrete operational",
@@ -5430,8 +5430,9 @@
       "questions",
       "phrasing",
       "wording",
-      "context",
-      "asked"
+      "asked",
+      "familiar",
+      "meaningful"
      ]
     }
    ],
@@ -6254,7 +6255,7 @@
       "working memory",
       "memory",
       "components",
-      "processing",
+      "processing steps",
       "steps",
       "strategies",
       "knowledge"
@@ -6322,7 +6323,7 @@
    "id": "ef_flex",
    "topic": "ef",
    "level": 1,
-   "ask": "Switching between rules, tasks or perspectives is which executive function?",
+   "ask": "Moving back and forth between rules, tasks or perspectives is which executive function?",
    "need": [
     [
      "cognitive flexibility",
@@ -6765,10 +6766,9 @@
       "predicts",
       "predicted",
       "related",
-      "linked",
       "correlated",
       "correlation",
-      "strongly"
+      "strongly related"
      ]
     }
    ],
@@ -7904,7 +7904,7 @@
    "id": "par_neglectful",
    "topic": "parenting",
    "level": 1,
-   "ask": "Which parenting style describes uninvolved or absent parents?",
+   "ask": "Which parenting style describes parents who are absent and take little part in their child's life?",
    "need": [
     [
      "neglectful",
@@ -9040,7 +9040,7 @@
    "id": "th_history",
    "topic": "theories",
    "level": 2,
-   "ask": "What kind of influence is unique to a particular historical era and shared by a whole generation?",
+   "ask": "What kind of influence is unique to a particular era and shared by a whole generation?",
    "need": [
     [
      "history graded",
@@ -10949,10 +10949,10 @@
      "any": [
       "regulate",
       "regulation",
-      "control",
       "self control",
       "inhibit",
-      "manage"
+      "manage",
+      "restrain"
      ]
     }
    ],
@@ -11597,7 +11597,6 @@
       "weak",
       "no",
       "not supported",
-      "before",
       "earlier",
       "already"
      ]
@@ -11919,7 +11918,6 @@
       "principles",
       "step by step",
       "one task at a time",
-      "concrete",
       "hypothetical"
      ]
     }
@@ -14199,10 +14197,10 @@
       "affect each other",
       "affects the others",
       "both ways",
-      "bidirectional",
       "two way",
       "influence each other",
-      "mutual"
+      "mutual",
+      "everyone affects"
      ]
     }
    ],
@@ -14537,7 +14535,7 @@
       "wary",
       "fear",
       "avoid",
-      "experience"
+      "drop offs"
      ]
     }
    ],
