@@ -19,11 +19,11 @@ public final class Profile {
     public static final int MAX = 10;
 
     /**
-     * Guided → independent: answer with a word bank in view, complete a sentence, recall it from the question
+     * Guided → independent: answer with a free hint, complete a sentence, recall it from the question
      * alone, then apply it to a new scenario.
      */
     public enum Mode {
-        GUIDED("Word bank", 3), FILL("Complete", 6), RECALL("Recall", 10), APPLY("Apply", 14);
+        GUIDED("Guided", 3), FILL("Complete", 6), RECALL("Recall", 10), APPLY("Apply", 14);
         public final String label; public final int xp;
         Mode(String label, int xp) { this.label = label; this.xp = xp; }
         /** Where a challenge you haven't met yet starts, from its topic's mastery. */

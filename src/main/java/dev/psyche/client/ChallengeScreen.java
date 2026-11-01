@@ -70,20 +70,23 @@ final class ChallengeScreen extends Screen {
         this.pitch = pitch;
         this.onSolved = onSolved;
         this.mode = PsycheClient.profile.mode(c);
-        this.bank = c.tiles(PsycheClient.RND);
+        this.bank = PsycheClient.CONTENT.bank(c, PsycheClient.RND);
         ladder();
     }
 
     private void ladder() {
         rungs.clear();
         if (mode == Mode.APPLY) rungs.add(Rung.QUESTION);
-        if (!c.hint.isEmpty()) rungs.add(Rung.CLUE);
-        rungs.add(Rung.SHAPE);
-        if (mode != Mode.GUIDED) rungs.add(Rung.BANK);
+        if (!c.hint.isEmpty() && free() != Rung.CLUE) rungs.add(Rung.CLUE);
+        if (free() != Rung.SHAPE) rungs.add(Rung.SHAPE);
+        rungs.add(Rung.BANK);
         hints = Math.min(hints, rungs.size());
     }
 
-    private boolean shown(Rung r) { int i = rungs.indexOf(r); return i >= 0 && i < hints; }
+    /** In guided mode the first hint (the clue, or the answer's shape if there is no clue) is given for free. */
+    private Rung free() { return mode != Mode.GUIDED ? null : c.hint.isEmpty() ? Rung.SHAPE : Rung.CLUE; }
+
+    private boolean shown(Rung r) { if (r == free()) return true; int i = rungs.indexOf(r); return i >= 0 && i < hints; }
 
     private boolean forced() { return !source.equals("review") && speaker == null; }
 
@@ -164,7 +167,7 @@ final class ChallengeScreen extends Screen {
                 if (shown(Rung.QUESTION)) top.add(text(Text.literal("In other words: " + c.ask), UI.MUTED, w, 4));
                 if (shown(Rung.CLUE)) top.add(text(Text.literal("Hint: " + c.hint), UI.AMBER, w, 4));
                 if (shown(Rung.SHAPE)) top.add(text(Text.literal(shape()), UI.AMBER, w, 4));
-                if (mode == Mode.GUIDED || shown(Rung.BANK)) top.add(words(w));
+                if (shown(Rung.BANK)) top.add(words(w));
                 if (result != null) feedback(w);
             }
             case COPY -> {
@@ -252,7 +255,7 @@ final class ChallengeScreen extends Screen {
         return new Block(h + gap, (ctx, x, y) -> ctx.drawTextWrapped(textRenderer, t, x, y, w, color));
     }
 
-    /** The word bank: the key terms you need (plus a couple you don't), shuffled. */
+    /** The word bank (last hint): the key terms you need hidden among others from the topic, shuffled. */
     private Block words(int w) {
         int cx = 0, rows = 1;
         for (String s : bank) {

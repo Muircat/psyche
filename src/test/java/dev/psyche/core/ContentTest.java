@@ -88,4 +88,16 @@ class ContentTest {
             if (content.challenges.stream().noneMatch(c -> c.topic.equals(t) && c.level == 1 && c.npc == null)) problems.add(t + ": no level-1 question");
         if (!problems.isEmpty()) fail(String.join("\n", problems));
     }
+
+    @Test
+    void wordBankHidesTheAnswerAmongDecoys() {
+        Content content = load();
+        List<String> problems = new ArrayList<>();
+        for (Content.Challenge c : content.challenges) {
+            List<String> bank = content.bank(c, new java.util.Random(1));
+            int keys = c.keys().size();
+            if (bank.size() < keys + Math.max(4, keys) || !bank.containsAll(c.keys())) problems.add(c.id + ": word bank " + bank + " gives the answer away");
+        }
+        if (!problems.isEmpty()) fail(String.join("\n", problems));
+    }
 }
