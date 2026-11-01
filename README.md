@@ -7,21 +7,29 @@ question opens: you type the answer in your own words, and you can't carry on un
 It's the sister mod of [Parle!](https://github.com/muircat/parle) and works the same way, with the same clean UI.
 
 ## What's in it
-**260 hand-written questions in 17 topics**, taken only from the course's lecture and tutorial slides:
+**481 hand-written questions in 25 topics**, taken only from the course materials: the lecture and tutorial slides
+and the two course books, Berk's *Development Through the Lifespan* (chapters 1–9) and Smith et al.'s chapter 9,
+*Helping others and moral development*.
 
 | Topic | Source |
 | --- | --- |
-| Why study development · Research methods | Lecture 1 |
-| Ethics with children | Lecture 1, Week 3 tutorial |
-| Nature, nurture & influences · Bronfenbrenner's model · Twin & adoption studies | Lecture 2 |
-| Growth & the brain · Motor development | Lecture 3 |
-| Perceptual development | Lecture 4 |
-| Piaget · Vygotsky · Information processing & comparing theories | Lecture 5, Week 7 tutorial |
-| Executive functions · Theory of mind | Lecture 6 |
-| Attachment · Parenting & family | Lectures 2 and 7 |
+| Why study development · Research methods · Ethics with children | Lecture 1, Week 3 tutorial, Berk ch. 1 |
+| Theories of development (lifespan perspective, Freud, Erikson, behaviourism, ethology) | Berk ch. 1 |
+| Nature, nurture & influences · Bronfenbrenner's model · Twin & adoption studies | Lecture 2, Berk ch. 1–2 |
+| Prenatal development & birth | Berk ch. 3 |
+| Growth & the brain · Motor development | Lecture 3, Berk ch. 4, 7, 9 |
+| Perceptual development | Lecture 4, Berk ch. 3–4 |
+| Piaget · Vygotsky · Information processing & comparing theories | Lecture 5, Week 7 tutorial, Berk ch. 1, 5, 7, 9 |
+| Executive functions · Theory of mind | Lecture 6, Berk ch. 5, 7, 9 |
+| Language development | Berk ch. 5, 7, 9 |
+| Emotions & temperament · Self, play, aggression & gender | Berk ch. 6, 8 |
+| Attachment · Parenting & family | Lectures 2 and 7, Berk ch. 2, 6, 8 |
+| Middle childhood thinking (concrete operations, memory strategies, metacognition) | Berk ch. 9 |
+| Prosocial behaviour · Moral development (Piaget, Kohlberg, Gilligan, Turiel, PATHS) | Smith et al. ch. 9, Berk ch. 8 |
 | Coursework & exam skills | Lecture 1, Week 4 and 5 tutorials |
 
-Plus a 90-term glossary that the marker uses to explain mix-ups.
+Every question shows its source after you answer it (for example *Lecture 5; Berk ch. 7* or *Smith et al. ch. 9*).
+Plus a 153-term glossary that the marker uses to explain mix-ups.
 
 ## How it teaches
 - **Recall, not recognition.** You always **type** the answer. No multiple choice.
@@ -38,7 +46,8 @@ Plus a 90-term glossary that the marker uses to explain mix-ups.
   so *macrosystem* is not a slip for *microsystem*.
 - **Explains misconceptions.** Common confusions are recognised and explained: assimilation vs accommodation,
   authoritarian vs authoritative, the three ToM tasks' "reality" answers, Bronfenbrenner's levels, validity vs
-  reliability, IV vs DV, experience-expectant vs -dependent, and more. Use another course term by mistake and it
+  reliability, IV vs DV, experience-expectant vs -dependent, over- vs underextension, Kohlberg's levels, moral rules vs
+  social conventions, and more. Use another course term by mistake and it
   tells you what that term means. Hedging ("assimilation or accommodation") doesn't count. The misconceptions you
   keep making come back more often.
 - **Feedback on explanations.** For longer answers it ticks off the ideas you've already got and says how many more
