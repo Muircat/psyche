@@ -1,0 +1,29 @@
+package dev.psyche.client;
+
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.text.Text;
+
+/** Shared palette and drawing helpers for a flat, clean look. */
+final class UI {
+    static final int BG = 0xF2161A22, INSET = 0xFF0E1117, TILE = 0xFF2A3140,
+            VIOLET = 0xFF7C5CE6, TEAL = 0xFF2DBEB4, RED = 0xFFE5484D, WHITE = 0xFFF1F3F7, MUTED = 0xFF8C96A8,
+            GREEN = 0xFF3FB950, AMBER = 0xFFF5A524, VIOLET_LIGHT = 0xFFB3A1F5, VIOLET_DARK = 0xFF3A2D73;
+
+    static void round(DrawContext ctx, int x, int y, int w, int h, int color) {
+        ctx.fill(x + 1, y, x + w - 1, y + h, color);
+        ctx.fill(x, y + 1, x + w, y + h - 1, color);
+    }
+
+    /** Dark card with a thin violet / teal / amber stripe on top. */
+    static void panel(DrawContext ctx, int x, int y, int w, int h) {
+        round(ctx, x, y, w, h, BG);
+        int t = w / 3;
+        ctx.fill(x + 1, y, x + t, y + 2, VIOLET);
+        ctx.fill(x + t, y, x + w - t, y + 2, TEAL);
+        ctx.fill(x + w - t, y, x + w - 1, y + 2, AMBER);
+    }
+
+    static boolean in(int[] r, double mx, double my) { return mx >= r[0] && mx < r[0] + r[2] && my >= r[1] && my < r[1] + r[3]; }
+
+    static Text color(String s, int c) { return Text.literal(s).styled(st -> st.withColor(c)); }
+}
